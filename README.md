@@ -1,6 +1,14 @@
-# java-web-gera-boleto
+# Java-web-gera-boleto
 
-REST API for PDF and PNG boleto generation 
+REST API for PDF and PNG boleto generation.
+
+Supported banks by [Stella Caelum](http://stella.caelum.com.br):
+* 001 - Banco do Brasil
+* 237 - Bradesco
+* 104 - Caixa
+* 399 - HSBC
+* 341 - Itaú
+* 033 - Santander
 
 # Run
 
@@ -21,8 +29,8 @@ localhost:8080
 # curl
 
 ```
-curl 'http://localhost:8080/geraboleto' \
--H 'Content-Type: application/x-www-form-urlencoded' \
+curl "http://localhost:8080/geraboleto" \
+-H "Content-Type: application/x-www-form-urlencoded" \
 -d numeroDoBanco=237 \
 -d dataDocumento=2018-06-05 \
 -d dataProcessamento=2018-06-05 \
