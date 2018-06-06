@@ -26,7 +26,7 @@ localhost:8080
 [Boleto](doc/geraboleto.pdf)
 
 
-# curl
+# Using terminal
 
 ```
 curl "http://localhost:8080/geraboleto" \
