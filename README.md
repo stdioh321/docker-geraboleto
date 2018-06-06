@@ -30,7 +30,7 @@ localhost:8080
 
 ```
 curl "http://localhost:8080/geraboleto" \
--H "Content-Type: application/x-www-form-urlencoded" \
+-H "Content-Type: application/x-www-form-urlencoded; charset=utf-8" \
 -d numeroDoBanco=237 \
 -d dataDocumento=2018-06-05 \
 -d dataProcessamento=2018-06-05 \
