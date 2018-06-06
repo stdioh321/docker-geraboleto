@@ -23,7 +23,7 @@ localhost:8080
 ![](doc/geraboleto-form.png)
 
 
-![Boleto](doc/geraboleto.pdf)
+![Boleto](doc/geraboleto.png)
 
 
 # Using terminal
