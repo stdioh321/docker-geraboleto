@@ -1,5 +1,7 @@
 # java-web-gera-boleto
 
+REST API for PDF and PNG boleto generation 
+
 # Run
 
 ```
@@ -44,4 +46,4 @@ curl 'http://localhost:8080/geraboleto' \
 -d locaisDePagamento="Até o vencimento pagável em qualquer banco" \
 -d locaisDePagamento="" \
 -d formatoSaida=pdf > boleto.pdf
-``
+```
