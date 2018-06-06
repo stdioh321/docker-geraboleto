@@ -38,6 +38,10 @@ public class BoletoForm {
     public String getFormatoSaida(){
         return formatoSaida;
     }
+    
+    public void setFormatoSaida(String formatoSaida) {
+    	this.formatoSaida = formatoSaida;
+    }
 
     public String getNumeroDoBanco() {
         return numeroDoBanco;
