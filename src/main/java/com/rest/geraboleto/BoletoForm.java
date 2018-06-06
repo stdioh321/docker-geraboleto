@@ -22,8 +22,16 @@ public class BoletoForm {
 
     private BigDecimal valorBoleto;
     private String numeroDoDocumento;
-    private String[] instrucoes;
-    private String[] locaisDePagamento;
+    
+    private String instrucao1;
+    private String instrucao2;
+    private String instrucao3;
+    private String instrucao4;
+    private String instrucao5;
+    
+    private String localDePagamento1;
+    private String localDePagamento2;
+    
     private String nomeBeneficiario;
     private String agencia;
     private String digitoAgencia;
@@ -94,22 +102,6 @@ public class BoletoForm {
 
     public void setNumeroDoDocumento(String numeroDoDocumento) {
         this.numeroDoDocumento = numeroDoDocumento;
-    }
-
-    public String[] getInstrucoes() {
-        return instrucoes;
-    }
-
-    public void setInstrucoes(String[] instrucoes) {
-        this.instrucoes = instrucoes;
-    }
-
-    public String[] getLocaisDePagamento() {
-        return locaisDePagamento;
-    }
-
-    public void setLocaisDePagamento(String[] locaisDePagamento) {
-        this.locaisDePagamento = locaisDePagamento;
     }
 
     public String getNomeBeneficiario() {
@@ -199,6 +191,62 @@ public class BoletoForm {
 	public void setPagadorNome(String pagadorNome) {
 		this.pagadorNome = pagadorNome;
 	}
+	
+	public String getInstrucao1() {
+		return instrucao1;
+	}
+
+	public void setInstrucao1(String instrucao1) {
+		this.instrucao1 = instrucao1;
+	}
+
+	public String getInstrucao2() {
+		return instrucao2;
+	}
+
+	public void setInstrucao2(String instrucao2) {
+		this.instrucao2 = instrucao2;
+	}
+
+	public String getInstrucao3() {
+		return instrucao3;
+	}
+
+	public void setInstrucao3(String instrucao3) {
+		this.instrucao3 = instrucao3;
+	}
+
+	public String getInstrucao4() {
+		return instrucao4;
+	}
+
+	public void setInstrucao4(String instrucao4) {
+		this.instrucao4 = instrucao4;
+	}
+
+	public String getInstrucao5() {
+		return instrucao5;
+	}
+
+	public void setInstrucao5(String instrucao5) {
+		this.instrucao5 = instrucao5;
+	}
+
+	public String getLocalDePagamento1() {
+		return localDePagamento1;
+	}
+
+	public void setLocalDePagamento1(String localDePagamento1) {
+		this.localDePagamento1 = localDePagamento1;
+	}
+
+	public String getLocalDePagamento2() {
+		return localDePagamento2;
+	}
+
+	public void setLocalDePagamento2(String localDePagamento2) {
+		this.localDePagamento2 = localDePagamento2;
+	}
 
 	public Boleto toBoleto(){
         Banco banco = Bancos.getPorNumero(numeroDoBanco);
@@ -231,8 +279,8 @@ public class BoletoForm {
                 .comPagador(pagador)  
                 .comValorBoleto(valorBoleto)
                 .comNumeroDoDocumento(numeroDoDocumento)
-                .comInstrucoes(instrucoes)
-                .comLocaisDePagamento(locaisDePagamento);
+                .comInstrucoes(instrucao1, instrucao2, instrucao3, instrucao4, instrucao5)
+                .comLocaisDePagamento(localDePagamento1, localDePagamento2);
         return boleto;
     }    
     
