@@ -53,5 +53,7 @@ curl "http://localhost:8080/geraboleto" \
 -d instrucoes="" \
 -d locaisDePagamento="Até o vencimento pagável em qualquer banco" \
 -d locaisDePagamento="" \
+-d pagadorNome="John Lenon" \
+-d pagadorDocumento="123456789" \
 -d formatoSaida=pdf > boleto.pdf
 ```

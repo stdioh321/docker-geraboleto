@@ -4,6 +4,7 @@ import br.com.caelum.stella.boleto.Banco;
 import br.com.caelum.stella.boleto.Beneficiario;
 import br.com.caelum.stella.boleto.Boleto;
 import br.com.caelum.stella.boleto.Datas;
+import br.com.caelum.stella.boleto.Pagador;
 import br.com.caelum.stella.boleto.bancos.Bancos;
 import java.math.BigDecimal;
 import java.util.Calendar;
@@ -33,6 +34,10 @@ public class BoletoForm {
     private String carteira;
     private String nossoNumero;
     private String digitoNossoNumero;
+    
+    private String pagadorDocumento;
+    private String pagadorNome;
+    
     private String formatoSaida;
     
     public String getFormatoSaida(){
@@ -178,8 +183,24 @@ public class BoletoForm {
     public void setDigitoNossoNumero(String digitoNossoNumero) {
         this.digitoNossoNumero = digitoNossoNumero;
     }
+    
+    public String getPagadorDocumento() {
+		return pagadorDocumento;
+	}
 
-    public Boleto toBoleto(){
+	public void setPagadorDocumento(String pagadorDocumento) {
+		this.pagadorDocumento = pagadorDocumento;
+	}
+
+	public String getPagadorNome() {
+		return pagadorNome;
+	}
+
+	public void setPagadorNome(String pagadorNome) {
+		this.pagadorNome = pagadorNome;
+	}
+
+	public Boleto toBoleto(){
         Banco banco = Bancos.getPorNumero(numeroDoBanco);
 
         Datas datas = Datas.novasDatas()
@@ -199,11 +220,15 @@ public class BoletoForm {
                 .comNossoNumero(nossoNumero)
                 .comDigitoNossoNumero(digitoNossoNumero);
 
+        Pagador pagador = Pagador.novoPagador()
+        		.comDocumento(pagadorDocumento)
+        		.comNome(pagadorNome);
+        
         Boleto boleto = Boleto.novoBoleto()
                 .comBanco(banco)
                 .comDatas(datas)
                 .comBeneficiario(beneficiario)
-                //.comPagador(pagador)  
+                .comPagador(pagador)  
                 .comValorBoleto(valorBoleto)
                 .comNumeroDoDocumento(numeroDoDocumento)
                 .comInstrucoes(instrucoes)
