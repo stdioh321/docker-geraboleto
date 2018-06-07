@@ -57,3 +57,10 @@ curl "http://localhost:8080/geraboleto" \
 -d pagadorDocumento="123456789" \
 -d formatoSaida=pdf > boleto.pdf
 ```
+
+or with Docker
+
+```
+docker build . -t geraboleto
+docker run -p 8080:8080 geraboleto
+```
