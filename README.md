@@ -13,12 +13,12 @@ Supported banks by [Stella Caelum](http://stella.caelum.com.br):
 # Run
 
 ```
-mvn spring-boot:run
+make run
 ```
 
 # Browser
 
-localhost:8080
+http://localhost:8080
 
 ![](doc/geraboleto-form.png)
 
@@ -61,6 +61,6 @@ curl "http://localhost:8080/geraboleto" \
 or with Docker
 
 ```
-docker build . -t geraboleto
-docker run -p 8080:8080 geraboleto
+make docker-build
+make docker-run
 ```

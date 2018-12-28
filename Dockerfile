@@ -2,7 +2,7 @@ FROM zenika/alpine-maven
 
 ADD . /root
 WORKDIR /root
-RUN chmod +x *.sh && /root/build.sh
+RUN apk --update add make && make dep && make build
 EXPOSE 8080
 
-CMD /root/run.sh
+CMD make run
