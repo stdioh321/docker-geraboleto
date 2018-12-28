@@ -1,7 +1,7 @@
 dep:
 	apk --update add fontconfig ttf-dejavu
 
-build:
+package:
 	mvn package
 
 run:
