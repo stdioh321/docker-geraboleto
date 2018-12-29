@@ -11,6 +11,20 @@
             <!-- Bootstrap -->
             <link rel='stylesheet' href='/webjars/bootstrap/css/bootstrap.min.css'>
             <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+
+            <link rel="manifest" href="manifest.json">
+            <script>
+            if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.register('/sw.js')
+                .then(function () {
+                    console.log('service worker registered');
+                })
+                .catch(function () {
+                    console.warn('service worker failed');
+                });
+            }
+            </script>
+            
     </head>
     <body>
         <div class="container">
