@@ -24,116 +24,140 @@
                 });
             }
             </script>
-            
+            <style>
+                .form-group label{
+                    font-weight: 700;
+                }
+            </style>
     </head>
     <body>
-        <div class="container">
-            <h1>Gera Boleto</h1>
+        <div class="container jumbotron pt-2">
             <div class="row">
-                <div class="col-md-6">
-                    <form action="geraboleto" method="POST">
-
-                        <div class="form-group">
-                            <label for="numeroDoBanco">Banco</label>
-                            <select class="form-control" name="numeroDoBanco">
-                                    <option value="001">001 - Banco do Brasil</option>
-                                    <option value="237" selected>237 - Bradesco</option>
-                                    <option value="104">104 - Caixa</option>
-                                    <option value="399">399 - HSBC</option>
-                                    <option value="341">341 - Itaú</option>
-                                    <option value="033">033 - Santander</option>
-                            </select>
+                <div class="col-12 col-md-8 offset-md-2">
+                    <h1 class="text-uppercase">Gerador de Boleto</h1>
+                    <div class="row">
+                        <div class="col-12">
+                            <form action="geraboleto" method="POST">
+                    
+                                <div class="form-group">
+                                    <label for="numeroDoBanco">Banco</label>
+                                    <select class="form-control" name="numeroDoBanco">
+                                        <option value="001">001 - Banco do Brasil</option>
+                                        <option value="237" selected>237 - Bradesco</option>
+                                        <option value="104">104 - Caixa</option>
+                                        <option value="399">399 - HSBC</option>
+                                        <option value="341">341 - Itaú</option>
+                                        <option value="033">033 - Santander</option>
+                                    </select>
+                                </div>
+                    
+                                <div class="form-group">
+                                    <label for="dataDocumento">Data Documento</label>
+                                    <input type="date" class="form-control" name="dataDocumento" placeholder="Data Documento"
+                                        min="2018-06-05" max="2050-01-01" value="2018-06-05" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="dataProcessamento">Data Processamento</label>
+                                    <input type="date" class="form-control" name="dataProcessamento" placeholder="Data Processamento"
+                                        min="2018-06-05" max="2050-01-01" value="2018-06-05" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="dataVencimento">Data Vencimento</label>
+                                    <input type="date" class="form-control" name="dataVencimento" placeholder="Data Vencimento"
+                                        min="2018-06-05" max="2050-01-01" value="2018-06-05" required>
+                                </div>
+                    
+                                <div class="form-group">
+                                    <label for="nomeBeneficiario">Nome do Beneficiário</label>
+                                    <input type="text" class="form-control" name="nomeBeneficiario" placeholder="Nome" required
+                                        value="Beneficiário Ltda">
+                                </div>
+                                <div class="form-group">
+                                    <label for="agencia">Agência</label>
+                                    <input type="text" class="form-control" name="agencia" placeholder="Agencia" min="5" max="5" required
+                                        value="0504">
+                                </div>
+                                <div class="form-group">
+                                    <label for="digitoAgencia">Digito Agência</label>
+                                    <input type="text" class="form-control" name="digitoAgencia" placeholder="Agencia Digito" min="5"
+                                        max="5" required value="5">
+                                </div>
+                                <div class="form-group">
+                                    <label for="codigoBeneficiario">Codigo Beneficiario</label>
+                                    <input type="text" class="form-control" name="codigoBeneficiario" placeholder="Codigo Beneficiario"
+                                        min="5" max="5" required value="0081092">
+                                </div>
+                                <div class="form-group">
+                                    <label for="digitoCodigoBeneficiario">Digito Codigo Beneficiario</label>
+                                    <input type="text" class="form-control" name="digitoCodigoBeneficiario"
+                                        placeholder="Digito Codigo Beneficiario" min="1" max="1" required value="4">
+                                </div>
+                                <div class="form-group">
+                                    <label for="numeroConvenio">Numero Convenio</label>
+                                    <input type="text" class="form-control" name="numeroConvenio" placeholder="Numero Convenio" required
+                                        value="1">
+                                </div>
+                                <div class="form-group">
+                                    <label for="carteira">Carteira</label>
+                                    <input type="text" class="form-control" name="carteira" placeholder="Carteira" required value="16">
+                                </div>
+                    
+                                <div class="form-group">
+                                    <label for="nossoNumero">Nosso Numero</label>
+                                    <input type="text" class="form-control" name="nossoNumero" placeholder="Nosso Numero" required
+                                        value="806052146">
+                                </div>
+                                <div class="form-group">
+                                    <label for="digitoNossoNumero">Digito Nosso Numero</label>
+                                    <input type="text" class="form-control" name="digitoNossoNumero" placeholder="Digito Nosso Numero">
+                                </div>
+                    
+                                <div class="form-group">
+                                    <label for="valorBoleto">Valor Boleto</label>
+                                    <input type="text" class="form-control" name="valorBoleto" placeholder="Valor Boleto" required
+                                        value="987.654">
+                                </div>
+                                <div class="form-group">
+                                    <label for="numeroDoDocumento">Numero Documento</label>
+                                    <input type="text" class="form-control" name="numeroDoDocumento" placeholder="Numero Documento" required
+                                        value="806052146">
+                                </div>
+                                <div class="form-group">
+                                    <label for="pagadorNome">Pagador Nome</label>
+                                    <input type="text" class="form-control" name="pagadorNome" placeholder="Nome" required
+                                        value="John Lenon">
+                                    <input type="text" class="form-control" name="pagadorDocumento" placeholder="Numero Documento" required
+                                        value="123456789">
+                                </div>
+                                <div class="form-group">
+                                    <label for="instrucoes">Instruçõs</label>
+                                    <input type="text" class="form-control" name="instrucao1" placeholder="Instrucao 1" required
+                                        value="Sr. Caixa, não receber após o vencimento">
+                                    <input type="text" class="form-control" name="instrucao2" placeholder="Instrucao 2">
+                                    <input type="text" class="form-control" name="instrucao3" placeholder="Instrucao 3">
+                                    <input type="text" class="form-control" name="instrucao4" placeholder="Instrucao 4">
+                                    <input type="text" class="form-control" name="instrucao5" placeholder="Instrucao 5">
+                                </div>
+                                <div class="form-group">
+                                    <label for="locaisDePagamento">Locais de Pagamento</label>
+                                    <input type="text" class="form-control" name="localDePagamento1" placeholder="Local Pagamento 1"
+                                        required value="Até o vencimento pagável em qualquer banco ">
+                                    <input type="text" class="form-control" name="localDePagamento2" placeholder="Local Pagamento 2">
+                                </div>
+                    
+                                <div class="form-group">
+                                    <label for="formatoSaida">Formato</label>
+                                    <select class="form-control" name="formatoSaida">
+                                        <option value="pdf" selected>PDF</option>
+                                        <option value="png">PNG</option>
+                                    </select>
+                                </div>
+                    
+                                <button type="submit" class="btn btn-primary btn-block">Gerar</button>
+                                <br />
+                            </form>
                         </div>
-
-                        <div class="form-group">
-                            <label for="dataDocumento">Data Documento</label>
-                            <input type="date" class="form-control" name="dataDocumento" placeholder="Data Documento" min="2018-06-05" max="2050-01-01" value="2018-06-05" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="dataProcessamento">Data Processamento</label>
-                            <input type="date" class="form-control" name="dataProcessamento" placeholder="Data Processamento" min="2018-06-05" max="2050-01-01" value="2018-06-05" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="dataVencimento">Data Vencimento</label>
-                            <input type="date" class="form-control" name="dataVencimento" placeholder="Data Vencimento" min="2018-06-05" max="2050-01-01" value="2018-06-05"  required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="nomeBeneficiario">Nome do Beneficiário</label>
-                            <input type="text" class="form-control" name="nomeBeneficiario" placeholder="Nome" required value="Beneficiário Ltda">
-                        </div>
-                        <div class="form-group">
-                            <label for="agencia">Agência</label>
-                            <input type="text" class="form-control" name="agencia" placeholder="Agencia" min="5" max="5" required value="0504">
-                        </div>
-                        <div class="form-group">
-                            <label for="digitoAgencia">Digito Agência</label>
-                            <input type="text" class="form-control" name="digitoAgencia" placeholder="Agencia Digito" min="5" max="5" required value="5">
-                        </div>
-                        <div class="form-group">
-                            <label for="codigoBeneficiario">Codigo Beneficiario</label>
-                            <input type="text" class="form-control" name="codigoBeneficiario" placeholder="Codigo Beneficiario" min="5" max="5" required value="0081092">
-                        </div>
-                        <div class="form-group">
-                            <label for="digitoCodigoBeneficiario">Digito Codigo Beneficiario</label>
-                            <input type="text" class="form-control" name="digitoCodigoBeneficiario" placeholder="Digito Codigo Beneficiario" min="1" max="1" required value="4">
-                        </div>
-                        <div class="form-group">
-                            <label for="numeroConvenio">Numero Convenio</label>
-                            <input type="text" class="form-control" name="numeroConvenio" placeholder="Numero Convenio" required value="1">
-                        </div>
-                        <div class="form-group">
-                            <label for="carteira">Carteira</label>
-                            <input type="text" class="form-control" name="carteira" placeholder="Carteira" required value="16">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="nossoNumero">Nosso Numero</label>
-                            <input type="text" class="form-control" name="nossoNumero" placeholder="Nosso Numero" required value="806052146">
-                        </div>
-                        <div class="form-group">
-                            <label for="digitoNossoNumero">Digito Nosso Numero</label>
-                            <input type="text" class="form-control" name="digitoNossoNumero" placeholder="Digito Nosso Numero">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="valorBoleto">Valor Boleto</label>
-                            <input type="text" class="form-control" name="valorBoleto" placeholder="Valor Boleto" required value="987.654">
-                        </div>
-                        <div class="form-group">
-                            <label for="numeroDoDocumento">Numero Documento</label>
-                            <input type="text" class="form-control" name="numeroDoDocumento" placeholder="Numero Documento" required value="806052146">
-                        </div>
-                        <div class="form-group">
-                            <label for="pagadorNome">Pagador Nome</label>
-                            <input type="text" class="form-control" name="pagadorNome" placeholder="Nome" required value="John Lenon">
-                            <input type="text" class="form-control" name="pagadorDocumento" placeholder="Numero Documento" required value="123456789">
-                        </div>
-                        <div class="form-group">
-                            <label for="instrucoes">Instruçõs</label>
-                            <input type="text" class="form-control" name="instrucao1" placeholder="Instrucao 1" required value="Sr. Caixa, não receber após o vencimento">
-                            <input type="text" class="form-control" name="instrucao2" placeholder="Instrucao 2" >
-                            <input type="text" class="form-control" name="instrucao3" placeholder="Instrucao 3" >
-                            <input type="text" class="form-control" name="instrucao4" placeholder="Instrucao 4" >
-                            <input type="text" class="form-control" name="instrucao5" placeholder="Instrucao 5" >
-                        </div>
-                        <div class="form-group">
-                            <label for="locaisDePagamento">Locais de Pagamento</label>
-                            <input type="text" class="form-control" name="localDePagamento1" placeholder="Local Pagamento 1" required value="Até o vencimento pagável em qualquer banco ">
-                            <input type="text" class="form-control" name="localDePagamento2" placeholder="Local Pagamento 2" >
-                        </div>
-          
-                        <div class="form-group">
-                            <label for="formatoSaida">Formato</label>
-                            <select class="form-control" name="formatoSaida">
-                                <option value="pdf" selected>PDF</option>
-                                <option value="png">PNG</option>
-                            </select>
-                        </div>
-
-                        <button type="submit" class="btn btn-primary btn-block">Gerar</button>
-                        <br />
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>
